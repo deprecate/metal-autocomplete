@@ -172,7 +172,7 @@ class Autocomplete extends AutocompleteBase {
 				case SPACE:
 					this.handleActionKeys_();
 					event.preventDefault();
-				break;
+					break;
 			}
 		}
 	}

@@ -154,7 +154,9 @@ describe('Autocomplete', function() {
 				assert.strictEqual('Alabama', value.text);
 				done();
 			});
-			dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 13});
+			dom.triggerEvent(component.inputElement, 'keydown', {
+				keyCode: 13
+			});
 		});
 
 		input.value = 'Al';
@@ -172,7 +174,9 @@ describe('Autocomplete', function() {
 				assert.strictEqual('Alabama', value.text);
 				done();
 			});
-			dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 32});
+			dom.triggerEvent(component.inputElement, 'keydown', {
+				keyCode: 32
+			});
 		});
 
 		input.value = 'Al';
@@ -279,7 +283,9 @@ describe('Autocomplete', function() {
 		component.on('stateSynced', function() {
 			assert.ok(dom.hasClass(getListItem(0), 'active'));
 
-			dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 40});
+			dom.triggerEvent(component.inputElement, 'keydown', {
+				keyCode: 40
+			});
 			assert.notOk(dom.hasClass(getListItem(0), 'active'));
 			assert.ok(dom.hasClass(getListItem(1), 'active'));
 			done();
@@ -297,7 +303,9 @@ describe('Autocomplete', function() {
 		component.on('stateSynced', function() {
 			assert.ok(dom.hasClass(getListItem(0), 'active'));
 
-			dom.triggerEvent(input, 'keydown', {keyCode: 38});
+			dom.triggerEvent(input, 'keydown', {
+				keyCode: 38
+			});
 			assert.notOk(dom.hasClass(getListItem(0), 'active'));
 			assert.ok(dom.hasClass(getLastListItem(), 'active'));
 			done();
@@ -318,8 +326,12 @@ describe('Autocomplete', function() {
 		component.on('stateSynced', function() {
 			assert.ok(dom.hasClass(getListItem(0), 'active'));
 
-			dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 40});
-			dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 40});
+			dom.triggerEvent(component.inputElement, 'keydown', {
+				keyCode: 40
+			});
+			dom.triggerEvent(component.inputElement, 'keydown', {
+				keyCode: 40
+			});
 
 			assert.ok(dom.hasClass(getListItem(0), 'active'));
 			assert.notOk(dom.hasClass(getListItems(1), 'active'));
@@ -337,12 +349,16 @@ describe('Autocomplete', function() {
 		simulateFocus(input);
 
 		component.on('stateSynced', function() {
-			dom.triggerEvent(input, 'keydown', {keyCode: 40});
+			dom.triggerEvent(input, 'keydown', {
+				keyCode: 40
+			});
 
 			assert.notOk(dom.hasClass(getListItem(0), 'active'));
 			assert.ok(dom.hasClass(getListItem(1), 'active'));
 
-			dom.triggerEvent(input, 'keydown', {keyCode: 38});
+			dom.triggerEvent(input, 'keydown', {
+				keyCode: 38
+			});
 
 			assert.ok(dom.hasClass(getListItem(0), 'active'));
 			assert.notOk(dom.hasClass(getListItem(1), 'active'));
@@ -360,10 +376,18 @@ describe('Autocomplete', function() {
 		simulateFocus(input);
 		async.nextTick(function() {
 			assert.doesNotThrow(function() {
-				dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 40});
-				dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 38});
-				dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 13});
-				dom.triggerEvent(component.inputElement, 'keydown', {keyCode: 32});
+				dom.triggerEvent(component.inputElement, 'keydown', {
+					keyCode: 40
+				});
+				dom.triggerEvent(component.inputElement, 'keydown', {
+					keyCode: 38
+				});
+				dom.triggerEvent(component.inputElement, 'keydown', {
+					keyCode: 13
+				});
+				dom.triggerEvent(component.inputElement, 'keydown', {
+					keyCode: 32
+				});
 				done();
 			});
 		});
