@@ -321,4 +321,5 @@ Autocomplete.STATE = {
 	}
 };
 
+export { Autocomplete };
 export default Autocomplete;

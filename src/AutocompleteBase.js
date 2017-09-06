@@ -157,4 +157,5 @@ AutocompleteBase.STATE = {
 	}
 };
 
+export { AutocompleteBase };
 export default AutocompleteBase;
