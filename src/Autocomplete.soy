@@ -2,11 +2,11 @@
 
 /**
  * This renders the main element.
- * @param? listId
- * @param? elementClasses
- * @param? onListItemSelected_
  */
 {template .render}
+	{@param? elementClasses: string}
+	{@param? listId: string}
+	{@param? onListItemSelected_: ?}
 	<div
 		class="autocomplete autocomplete-list component {$elementClasses ? ' ' + $elementClasses : ''}"
 		data-onclick="handleClick_">
